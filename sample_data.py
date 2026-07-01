@@ -1,3 +1,10 @@
+"""
+Original Python sample data.
+
+This file has been retained for reference.
+The application now loads data from sample_data.json.
+"""
+
 servers = [
     {"Hostname": "WEB01", "OS": "Windows Server 2019"},
     {"Hostname": "APP01", "OS": "Windows Server 2008"},

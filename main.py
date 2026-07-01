@@ -1,5 +1,14 @@
+import json
+
 from compliance_orchestrator import ComplianceOrchestrator
-from sample_data import users, password_policy, servers, os_policy
+
+json_file = open("sample_data.json")
+data = json.load(json_file)
+
+users = data["users"]
+password_policy = data["password_policy"]
+servers = data["servers"]
+os_policy = data["os_policy"]
 
 JanCompOrchestrator = ComplianceOrchestrator()
 
