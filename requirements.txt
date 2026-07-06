@@ -1,0 +1,3 @@
+# Security Compliance Orchestrator Requirements
+
+boto3
