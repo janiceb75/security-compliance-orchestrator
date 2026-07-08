@@ -33,6 +33,3 @@ class AWSS3Collector:
 
 
 collector = AWSS3Collector()
-
-
-pprint(collector.list_buckets(), sort_dicts=False)

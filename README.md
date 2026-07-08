@@ -10,8 +10,11 @@ This project demonstrates object-oriented programming and the orchestrator patte
       boto3 integration
       Live AWS evidence collection
       Normalized IAM user model
+- v4: Added S3 collector and initial S3 audit agent.
+      Collects normalized S3 bucket evidence.
+      Evaluates encryption and versioning status.
 
 
-## Purpose
+      ## Purpose
 
-I am a cybersecurity professional focusing on DevSecOps and security automation. My goal is to build practial tools that solve everyday security problems that I encounter. 
+I am a cybersecurity professional focusing on DevSecOps and security automation. My goal is to build practial tools that solve everyday security problems that I encounter.

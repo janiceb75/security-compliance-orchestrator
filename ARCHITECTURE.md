@@ -31,3 +31,12 @@ Collectors gather facts.
 Audit agents interpret facts.
 
 The orchestrator coordinates the flow.
+
+
+AWSS3Collector
+    ↓
+Normalized bucket evidence
+    ↓
+S3AuditAgent
+    ↓
+S3 findings
