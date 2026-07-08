@@ -8,7 +8,7 @@ class ComplianceOrchestrator:
         self.overall_summary = {}
 
     def run_audits(self, users, password_policy, servers, os_policy):
-        print()
+
         password_agent = PasswordAuditAgent()
         pass_audit_results = password_agent.audit_passwords(users, password_policy)
         self.all_findings.extend(pass_audit_results)
