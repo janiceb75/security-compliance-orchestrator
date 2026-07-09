@@ -1,5 +1,7 @@
 from password_audit_agent import PasswordAuditAgent
 from server_audit_agent import ServerAuditAgent
+from s3_audit_agent import S3AuditAgent
+from collectors.aws_s3_collector import AWSS3Collector
 
 
 class ComplianceOrchestrator:
@@ -14,6 +16,8 @@ class ComplianceOrchestrator:
         self.all_findings.extend(pass_audit_results)
         server_agent = ServerAuditAgent()
         server_audit_results = server_agent.audit_servers(servers, os_policy)
+        s3_collector = AWSS3Collector()
+
         self.all_findings.extend(server_audit_results)
 
         return self.all_findings
