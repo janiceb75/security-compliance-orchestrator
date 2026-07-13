@@ -18,6 +18,13 @@ class ComplianceOrchestrator:
         server_audit_results = server_agent.audit_servers(servers, os_policy)
         s3_collector = AWSS3Collector()
 
+        normalized_buckets = s3_collector.list_buckets()
+
+        s3_agent = S3AuditAgent()
+        s3_audit_results = s3_agent.evaluate_buckets(normalized_buckets)
+
+        self.all_findings.extend(s3_audit_results)
+
         self.all_findings.extend(server_audit_results)
 
         return self.all_findings
@@ -29,11 +36,11 @@ class ComplianceOrchestrator:
         mediums = 0
         for finding in self.all_findings:
 
-            if finding["severity"] == "High":
+            if finding.get("severity") == "High":
                 highs += 1
-            if finding["severity"] == "Medium":
+            if finding.get("severity") == "Medium":
                 mediums += 1
-            if finding["severity"] == "Critical":
+            if finding.get("severity") == "Critical":
                 criticals += 1
 
         self.overall_summary = {
