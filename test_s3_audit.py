@@ -6,6 +6,7 @@ collector = AWSS3Collector()
 
 normalized_buckets = collector.list_buckets()
 
+
 agent = S3AuditAgent()
 findings = agent.evaluate_buckets(normalized_buckets)
 
