@@ -21,13 +21,14 @@ class AWSS3Collector:
                 "Rules"
             ][0]["ApplyServerSideEncryptionByDefault"]["SSEAlgorithm"]
             public_access_block = self.s3_client.get_public_access_block(Bucket=name)
+            public_access_settings = public_access_block["PublicAccessBlockConfiguration"]
             pprint(public_access_block)
             normalized_bucket = {
                 "name": name,
                 "created": date,
                 "algorithm": encryption_algorithm,
                 "versioning": versioning_status,
-                "public access blocked": public_access_block,
+                "public access settings": public_access_settings,
             }
             normalized_buckets.append(normalized_bucket)
             # self.bucket_names.append(bucket_name)
