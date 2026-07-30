@@ -21,7 +21,9 @@ class AWSS3Collector:
                 "Rules"
             ][0]["ApplyServerSideEncryptionByDefault"]["SSEAlgorithm"]
             public_access_block = self.s3_client.get_public_access_block(Bucket=name)
-            public_access_settings = public_access_block["PublicAccessBlockConfiguration"]
+            public_access_settings = public_access_block[
+                "PublicAccessBlockConfiguration"
+            ]
             pprint(public_access_block)
             normalized_bucket = {
                 "name": name,
