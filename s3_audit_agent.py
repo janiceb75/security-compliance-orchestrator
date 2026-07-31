@@ -43,7 +43,7 @@ class S3AuditAgent:
                 "evidence": bucket["versioning"],
             }
 
-            if bucket["BlockPublicAcLs"] == True:
+            if bucket["BlockPublicACLs"] == True:
                 bucket_acl_status = "Not"
             bucket_findings.append(encryption_assessment_result)
             bucket_findings.append(versioning_assessment_result)

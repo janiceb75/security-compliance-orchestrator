@@ -39,3 +39,5 @@ class AWSS3Collector:
 
 
 collector = AWSS3Collector()
+data = collector.list_buckets()
+pprint(data, sort_dicts=False)
