@@ -23,15 +23,15 @@ class S3AuditAgent:
                 "severity": severity,
                 "evidence": bucket["algorithm"],
             }
-            if bucket["versioning"] == "NotConfigured":
-                version_status = "Failed"
-                finding = "Versioning is not Enabled"
-                severity = "High"
-
-            else:
+            if bucket["versioning"] == "Enabled":
                 version_status = "Passed"
                 finding = "Versioning is Enabled"
                 severity = "Informational"
+
+            else:
+                version_status = "Failed"
+                finding = "Versioning is not Enabled"
+                severity = "High"
 
             versioning_assessment_result = {
                 "resource": bucket["name"],
