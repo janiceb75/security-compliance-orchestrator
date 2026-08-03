@@ -40,4 +40,10 @@ class AWSS3Collector:
 
 collector = AWSS3Collector()
 data = collector.list_buckets()
+
+print()
+print()
+print("Following is the normalized bucket data")
+print()
+print()
 pprint(data, sort_dicts=False)
