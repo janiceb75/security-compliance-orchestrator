@@ -24,7 +24,7 @@ class AWSS3Collector:
             public_access_settings = public_access_block[
                 "PublicAccessBlockConfiguration"
             ]
-            pprint(public_access_block)
+            # pprint(public_access_block)
             normalized_bucket = {
                 "name": name,
                 "created": date,
