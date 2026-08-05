@@ -7,7 +7,6 @@ class AWSS3Collector:
 
     def __init__(self):
         self.s3_client = boto3.client("s3")
-
     def list_buckets(self):
         response = self.s3_client.list_buckets()
         normalized_buckets = []
